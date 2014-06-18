@@ -26,14 +26,6 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
 
-        <!-- Anonymous statistics - (AOKPStats) -->
-        <PreferenceScreen
-            android:key="aokpstats"
-            android:title="@string/anonymous_statistics_title"
-            android:summary="@string/anonymous_statistics_summary"
-            android:fragment="com.android.settings.aokpstats.AnonymousStats" >
-        </PreferenceScreen>
-
         <!-- Legal Information -->
         <PreferenceScreen
                 android:key="container"
@@ -172,6 +164,12 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/build_date"
                 android:summary="@string/build_date_default" />
+
+        <!-- JCROM version -->
+        <Preference android:key="jcrom_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/jcrom_version"
+                android:summary="@string/jcrom_version_default" />
 
         <!-- Detailed build version -->
         <Preference android:key="build_number" 
