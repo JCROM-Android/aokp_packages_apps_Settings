@@ -63,6 +63,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String KEY_FIRMWARE_VERSION = "firmware_version";
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
+    private static final String KEY_JCROM_VERSION = "jcrom_version";
     private static final String KEY_MOD_VERSION = "mod_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_DEVICE_CHIPSET = "device_chipset";
@@ -99,7 +100,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         setStringSummary(KEY_KERNEL_VERSION, getFormattedKernelVersion());
         findPreference(KEY_KERNEL_VERSION).setEnabled(true);
-        setValueSummary(KEY_MOD_VERSION, "ro.aokp.version");
+        setValueSummary(KEY_MOD_VERSION, "ro.aokp.orig.version");
         findPreference(KEY_MOD_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
@@ -116,6 +117,8 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
                 SystemProperties.get("ro.device.rear_cam", null));
         addStringPreference(KEY_DEVICE_SCREEN_RESOLUTION,
                 SystemProperties.get("ro.device.screen_res", null));
+        setValueSummary(KEY_JCROM_VERSION, "ro.aokp.version");
+        findPreference(KEY_JCROM_VERSION).setEnabled(true);
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
