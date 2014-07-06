@@ -161,7 +161,9 @@ public class Settings extends PreferenceActivity
             R.id.accessibility_settings,
             R.id.print_settings,
             R.id.nfc_payment_settings,
-            R.id.home_settings
+            R.id.home_settings,
+            R.id.jcrom_settings, 
+            R.id.jcrom_developers
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -354,7 +356,8 @@ public class Settings extends PreferenceActivity
         TrustedCredentialsSettings.class.getName(),
         PaymentSettings.class.getName(),
         KeyboardLayoutPickerFragment.class.getName(),
-        ThemeSettings.class.getName()
+        ThemeSettings.class.getName(),
+        JapaneseCustomRomSettings.class.getName()
     };
 
     @Override
@@ -1128,6 +1131,7 @@ public class Settings extends PreferenceActivity
         }
     }
     public static class StorageUseActivity extends Settings { /* empty */ }
+    public static class JapaneseCustomRomSettingsActivity extends Settings { /* empty */ }
     public static class DevelopmentSettingsActivity extends Settings { /* empty */ }
     public static class AccessibilitySettingsActivity extends Settings { /* empty */ }
     public static class CaptioningSettingsActivity extends Settings { /* empty */ }
@@ -1157,4 +1161,5 @@ public class Settings extends PreferenceActivity
     public static class PrintJobSettingsActivity extends Settings { /* empty */ }
     public static class AnonymousStatsActivity extends Settings { /* empty */ }
     public static class ThemeSettingsActivity extends Settings { /* empty */ }
+
 }
